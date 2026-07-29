@@ -1,5 +1,6 @@
 import Image from "next/image"
 import ContactoForm from "@/components/ContactoForm"
+import ServicioCard from "@/components/ServicioCard"
 import { SITE, CIFRAS, NORMAS, SERVICIOS, SERVICIO_DESTACADO, PROCESO, VALORES } from "@/lib/site"
 
 export default function Home() {
@@ -211,21 +212,7 @@ function Servicios() {
 
       <div className="mt-5 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
         {SERVICIOS.map((s, i) => (
-          <article key={s.titulo}
-            className="group rounded-2xl border border-hairline bg-white p-7 transition hover:-translate-y-0.5 hover:border-brand-500/40 hover:shadow-lg hover:shadow-navy-900/5">
-            <span className="text-xs font-black tabular-nums text-brand-500/60">
-              {String(i + 1).padStart(2, "0")}
-            </span>
-            <h3 className="mt-3 text-lg font-bold text-navy-900">{s.titulo}</h3>
-            <p className="mt-2.5 text-sm leading-relaxed text-ink/70">{s.resumen}</p>
-            <ul className="mt-5 flex flex-wrap gap-1.5">
-              {s.puntos.map(p => (
-                <li key={p} className="rounded-md bg-surface px-2.5 py-1 text-xs font-medium text-muted">
-                  {p}
-                </li>
-              ))}
-            </ul>
-          </article>
+          <ServicioCard key={s.titulo} s={s} i={i} />
         ))}
       </div>
     </section>

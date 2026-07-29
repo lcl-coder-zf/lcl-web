@@ -1,7 +1,11 @@
 "use client"
 
-import { useState } from "react"
-import { SITE } from "@/lib/site"
+import { useEffect, useState } from "react"
+import { SITE, SERVICIOS, SERVICIO_DESTACADO } from "@/lib/site"
+
+// Opciones del desplegable = los servicios que se muestran en la página, para que
+// al clic en una tarjeta el valor preseleccionado exista tal cual en la lista.
+const OPCIONES = [SERVICIO_DESTACADO.titulo, ...SERVICIOS.map(s => s.titulo), "Otro"]
 
 // Sin backend a propósito: el formulario arma el mensaje y abre WhatsApp con
 // todo escrito. Cero infraestructura que mantener y la conversación queda donde
@@ -14,6 +18,16 @@ export default function ContactoForm() {
 
   const set = (campo: string, valor: string) =>
     setForm(prev => ({ ...prev, [campo]: valor }))
+
+  // Al clic en una tarjeta de servicio, deja ese servicio ya seleccionado aquí.
+  useEffect(() => {
+    function onInteres(e: Event) {
+      const titulo = (e as CustomEvent<string>).detail
+      if (titulo) setForm(prev => ({ ...prev, interes: titulo }))
+    }
+    window.addEventListener("lcl:interes", onInteres)
+    return () => window.removeEventListener("lcl:interes", onInteres)
+  }, [])
 
   function enviar(e: React.FormEvent) {
     e.preventDefault()
@@ -77,14 +91,7 @@ export default function ContactoForm() {
         </label>
         <select id="interes" value={form.interes} onChange={e => set("interes", e.target.value)} className={campo}>
           <option value="">Selecciona una opción</option>
-          <option>Oficial de Cumplimiento externo</option>
-          <option>Certificación BASC</option>
-          <option>Certificación ISO 9001</option>
-          <option>SARLAFT / SAGRILAFT / PTEE</option>
-          <option>Gestión legal</option>
-          <option>Auditoría interna</option>
-          <option>Formación al equipo</option>
-          <option>Otro</option>
+          {OPCIONES.map(o => <option key={o} value={o}>{o}</option>)}
         </select>
       </div>
 
