@@ -14,10 +14,11 @@ export const metadata: Metadata = {
     template: "%s | LCL Gestión Empresarial",
   },
   description:
-    "Consultoría en auditoría, gestión de riesgos, gestión legal y cumplimiento normativo en Colombia. BASC, ISO 9001, SARLAFT y PTEE. Medellín, Bogotá y acompañamiento virtual en todo el país.",
+    "Oficial de Cumplimiento externo, auditoría, gestión de riesgos y cumplimiento normativo en Colombia. BASC, ISO, SARLAFT, SAGRILAFT y PTEE. Medellín, Bogotá y acompañamiento virtual en todo el país.",
   keywords: [
-    "auditoría BASC", "certificación ISO 9001", "SARLAFT", "PTEE",
-    "gestión legal", "cumplimiento normativo", "Medellín", "Itagüí", "Colombia",
+    "oficial de cumplimiento externo", "auditoría BASC", "ISO 9001", "SARLAFT",
+    "SAGRILAFT", "PTEE", "LA/FT/FP", "gestión legal", "cumplimiento normativo",
+    "Medellín", "Itagüí", "Colombia",
   ],
   openGraph: {
     type: "website",

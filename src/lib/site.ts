@@ -22,7 +22,20 @@ export const CIFRAS = [
   { valor: "2", etiqueta: "Sedes: Medellín y Bogotá" },
 ]
 
-export const NORMAS = ["BASC", "ISO 9001", "SARLAFT", "PTEE"]
+export const NORMAS = ["BASC", "ISO", "SARLAFT", "SAGRILAFT", "LA/FT/FP y C/ST", "PTEE"]
+
+// Servicio bandera: va destacado arriba de la grilla, no dentro de ella.
+export const SERVICIO_DESTACADO = {
+  titulo: "Oficial de Cumplimiento externo",
+  resumen:
+    "Asumimos el rol ante la Superintendencia con dedicación real: monitoreo, debida diligencia, reportes y respuesta a requerimientos. Sin sumar un cargo a la nómina.",
+  puntos: [
+    "Designación ante la Super",
+    "Debida diligencia de contrapartes",
+    "Reportes UIAF",
+    "Informes a junta",
+  ],
+}
 
 export const SERVICIOS = [
   {
@@ -41,7 +54,7 @@ export const SERVICIOS = [
     titulo: "Cumplimiento LA/FT",
     resumen:
       "Diseño e implementación del sistema completo: manual, matriz de riesgo, señales de alerta y reportes al regulador.",
-    puntos: ["SARLAFT", "PTEE", "Debida diligencia", "Reportes UIAF"],
+    puntos: ["SARLAFT", "SAGRILAFT", "PTEE", "Reportes UIAF"],
   },
   {
     titulo: "Gestión de riesgos",

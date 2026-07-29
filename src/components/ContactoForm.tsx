@@ -77,9 +77,10 @@ export default function ContactoForm() {
         </label>
         <select id="interes" value={form.interes} onChange={e => set("interes", e.target.value)} className={campo}>
           <option value="">Selecciona una opción</option>
+          <option>Oficial de Cumplimiento externo</option>
           <option>Certificación BASC</option>
           <option>Certificación ISO 9001</option>
-          <option>SARLAFT / PTEE</option>
+          <option>SARLAFT / SAGRILAFT / PTEE</option>
           <option>Gestión legal</option>
           <option>Auditoría interna</option>
           <option>Formación al equipo</option>

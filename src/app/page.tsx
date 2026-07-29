@@ -1,6 +1,6 @@
 import Image from "next/image"
 import ContactoForm from "@/components/ContactoForm"
-import { SITE, CIFRAS, NORMAS, SERVICIOS, PROCESO, VALORES } from "@/lib/site"
+import { SITE, CIFRAS, NORMAS, SERVICIOS, SERVICIO_DESTACADO, PROCESO, VALORES } from "@/lib/site"
 
 export default function Home() {
   return (
@@ -177,7 +177,39 @@ function Servicios() {
         texto="Seis frentes que se pueden tomar por separado o como un acompañamiento completo, según en qué punto esté la organización."
       />
 
-      <div className="mt-14 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+      {/* Servicio bandera: va destacado y a lo ancho, porque es el que
+          diferencia a LCL y porque siete tarjetas iguales dejarían una sola
+          huérfana en la última fila. */}
+      <article className="relative mt-14 overflow-hidden rounded-2xl bg-navy-900 p-8 sm:p-10">
+        <div className="absolute inset-0 grid-lines opacity-70" aria-hidden />
+        <div className="relative grid gap-8 lg:grid-cols-[1.15fr_1fr] lg:gap-14">
+          <div>
+            <span className="inline-flex items-center gap-2 rounded-full border border-brand-500/25 bg-brand-500/10 px-3 py-1 text-[11px] font-bold uppercase tracking-[0.15em] text-brand-400">
+              Servicio destacado
+            </span>
+            <h3 className="mt-5 text-2xl font-black tracking-tight text-white sm:text-3xl">
+              {SERVICIO_DESTACADO.titulo}
+            </h3>
+            <p className="mt-4 text-base leading-relaxed text-steel">{SERVICIO_DESTACADO.resumen}</p>
+            <a href="#contacto"
+              className="mt-7 inline-block rounded-xl bg-brand-500 px-6 py-3 text-sm font-semibold text-navy-950 transition hover:bg-brand-400">
+              Consultar por este servicio
+            </a>
+          </div>
+
+          <ul className="grid content-start gap-2.5 sm:grid-cols-2 lg:grid-cols-1">
+            {SERVICIO_DESTACADO.puntos.map(p => (
+              <li key={p}
+                className="flex items-center gap-3 rounded-xl border border-white/10 bg-white/[0.04] px-4 py-3">
+                <span className="h-1.5 w-1.5 flex-shrink-0 rounded-full bg-brand-500" />
+                <span className="text-sm font-medium text-white/90">{p}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </article>
+
+      <div className="mt-5 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
         {SERVICIOS.map((s, i) => (
           <article key={s.titulo}
             className="group rounded-2xl border border-hairline bg-white p-7 transition hover:-translate-y-0.5 hover:border-brand-500/40 hover:shadow-lg hover:shadow-navy-900/5">
