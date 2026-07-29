@@ -79,8 +79,8 @@ export default function ContactoForm() {
           <option value="">Selecciona una opción</option>
           <option>Certificación BASC</option>
           <option>Certificación ISO 9001</option>
-          <option>SG-SST</option>
-          <option>SAGRILAFT / SARLAFT / SIPLAFT</option>
+          <option>SARLAFT / PTEE</option>
+          <option>Gestión legal</option>
           <option>Auditoría interna</option>
           <option>Formación al equipo</option>
           <option>Otro</option>

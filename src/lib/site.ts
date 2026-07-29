@@ -10,7 +10,7 @@ export const SITE = {
   telefonoE164: "573117453541",
   correoComercial: "laura.llano@lclgestionempresarial.com",
   correoAdmin: "contabilidad@lclgestionempresarial.com",
-  direccion: "Cra. 84F # 3D-150, Belén, Medellín",
+  direccion: "Cra. 43 # 50-69, Los Naranjos, Itagüí, Ant.",
   portalClientes: "https://app.lclgestionempresarial.com",
   ciudades: "Medellín · Bogotá · Virtual en toda Colombia",
 } as const
@@ -22,14 +22,14 @@ export const CIFRAS = [
   { valor: "2", etiqueta: "Sedes: Medellín y Bogotá" },
 ]
 
-export const NORMAS = ["BASC", "ISO 9001", "SG-SST", "SAGRILAFT", "SARLAFT", "SIPLAFT"]
+export const NORMAS = ["BASC", "ISO 9001", "SARLAFT", "PTEE"]
 
 export const SERVICIOS = [
   {
     titulo: "Auditorías",
     resumen:
       "Auditorías internas y de preparación para el ente certificador, con hallazgos accionables y no con un informe que nadie lee.",
-    puntos: ["BASC", "ISO 9001", "SG-SST", "Riesgo LA/FT"],
+    puntos: ["BASC", "ISO 9001", "Riesgo LA/FT", "PTEE"],
   },
   {
     titulo: "Certificaciones",
@@ -41,7 +41,7 @@ export const SERVICIOS = [
     titulo: "Cumplimiento LA/FT",
     resumen:
       "Diseño e implementación del sistema completo: manual, matriz de riesgo, señales de alerta y reportes al regulador.",
-    puntos: ["SAGRILAFT", "SARLAFT", "SIPLAFT", "Reportes UIAF"],
+    puntos: ["SARLAFT", "PTEE", "Debida diligencia", "Reportes UIAF"],
   },
   {
     titulo: "Gestión de riesgos",
@@ -50,10 +50,12 @@ export const SERVICIOS = [
     puntos: ["Matrices", "Controles", "Planes de acción", "Seguimiento"],
   },
   {
-    titulo: "Seguridad y salud en el trabajo",
+    titulo: "Gestión legal",
+    // Reemplaza a la tarjeta de SG-SST, que LCL ya no ofrece. Alcance
+    // aprobado por Daniel el 29 jul 2026.
     resumen:
-      "Implementación y mantenimiento del SG-SST conforme a la normativa colombiana vigente, listo para inspección.",
-    puntos: ["Estándares mínimos", "Plan anual", "Indicadores", "Documentación"],
+      "Acompañamiento jurídico del día a día de la empresa, para que el cumplimiento no se quede en el papel del sistema de gestión.",
+    puntos: ["Revisión contractual", "Políticas internas", "Protección de datos", "Respuesta a requerimientos"],
   },
   {
     titulo: "Formación",
